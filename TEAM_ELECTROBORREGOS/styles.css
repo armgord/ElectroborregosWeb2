@@ -1,0 +1,478 @@
+/* =======================================================
+   VARIABLES GLOBALES (Ajustadas a Blanco y Negro)
+   ======================================================= */
+:root {
+    --color-nasa-blue: #000000;       /* Fondo principal: Negro sólido */
+    --color-content-bg: #1A1A1A;      /* Fondo de contenido/activo: Gris muy oscuro */
+    --color-text-white: #FFFFFF;      /* Texto y acento principal: Blanco */
+    --color-border-gray: #333333;     /* Borde sutil: Gris oscuro */
+    /* ... Asegúrate de que todas las demás variables de color estén eliminadas o en monocromo ... */
+}
+    /* Nota: Los colores de acento (rojo/cyan) se han cambiado a blanco para el look monocromático. */
+
+
+
+
+
+/* =======================================================
+   ESTILOS GENERALES Y PÁGINA PRINCIPAL (home.html)
+   ======================================================= */
+body {
+    /* Fondo espacial, afecta al home.html y navbar.html (para nav-body) */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #E0E0E0; /* Texto base Gris claro */
+    background-color: var(--color-dark-blue);
+    overflow-x: hidden; 
+
+    /* IMAGEN DE FONDO GLOBAL DEL ASTRONAUTA */
+    background-image: url('imagenes/espacio.jpg'); /* <--- AJUSTA LA RUTA */
+    background-size: cover; 
+    background-position: center right; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+
+/* Fondo para la barra de navegación (nav-body) para asegurar fondo sólido */
+.nav-body {
+    background: var(--color-dark-blue); 
+}
+
+/* --- CONTENIDO PRINCIPAL (full-content-area) --- */
+.full-content-area {
+    padding: 40px;
+    position: relative; 
+    min-height: 100vh;
+    z-index: 1; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    /* CRÍTICO: Aseguramos el color del texto para el contenido en general */
+    color: #FFFFFF; 
+}
+
+/* Capa semitransparente sobre el fondo (para legibilidad) */
+.background-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); /* Opacidad que bloquea la mayor parte de la luz del fondo */
+    z-index: -1; 
+}
+
+.welcome-title { 
+    color: #FFFFFF; /* CRÍTICO: Blanco puro */
+    font-size: 3.5em; 
+    text-align: left; 
+    margin-bottom: 10px; 
+    padding-top: 20px; 
+    line-height: 1.1; 
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Sombra ligera para contraste extra */
+}
+
+.intro-paragraph { 
+    text-align: left; 
+    font-size: 1.3em; 
+    margin: 20px 0 40px 0; 
+    max-width: 800px; 
+    line-height: 1.6; 
+    /* Fondo semi-opaco para asegurar legibilidad sobre el fondo espacial */
+    background-color: rgba(25, 27, 77, 0.9); 
+    padding: 15px 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    color: #FFFFFF; /* CRÍTICO: Texto blanco dentro del párrafo */
+}
+
+.highlight-text { color: #FFFFFF; font-weight: bold; }
+
+/* --- SECCIONES DE CONTENIDO INFERIOR --- */
+.content-section { 
+    margin: 40px auto; 
+    max-width: 900px; 
+    /* CRÍTICO: Damos un fondo opaco al contenedor de las secciones para legibilidad */
+    background: var(--color-panel-background); 
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* CRÍTICO: Aseguramos que todo el texto interior sea blanco */
+    color: #FFFFFF; 
+}
+
+.content-section p {
+    color: #FFFFFF; /* Asegura que todos los párrafos sean blancos */
+}
+
+.section-title { 
+    color: #FFFFFF; /* Títulos de sección blancos */
+    border-bottom: 1px solid var(--color-border-subtle); 
+    padding-bottom: 5px; 
+    margin-top: 30px; 
+    font-size: 1.8em; 
+    font-weight: 600; 
+}
+
+.benefit-list { list-style: none; padding-left: 0; margin-top: 20px; }
+.benefit-list li { 
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente para los ítems de lista */
+    padding: 15px; 
+    margin-bottom: 10px; 
+    border-left: 4px solid var(--color-white); 
+    border-radius: 4px; 
+    line-height: 1.4; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); 
+}
+
+.benefit-list strong { color: #FFFFFF; font-weight: 700; }
+.final-call { 
+    text-align: center; 
+    font-size: 1.2em; 
+    margin-top: 40px; 
+    color: #FFFFFF; 
+    padding-bottom: 50px; 
+}
+/* =======================================================
+   ESTILOS BASE Y CORRECCIÓN DE ALTURA
+   ======================================================= */
+
+/* CRÍTICO: Asegura que el body de la navegación se extienda por completo */
+.nav-body {
+    background-color: var(--color-nasa-blue);
+    min-height: 100vh; 
+    padding: 0; 
+    margin: 0;
+}
+
+
+/* =======================================================
+   ESTILOS DE LA BARRA DE NAVEGACIÓN (navbar.html) - MONOCROMÁTICO
+   ======================================================= */
+
+.sidebar-menu {
+    background-color: var(--color-nasa-blue); 
+    width: 100%; 
+    height: 100%; /* Ocupa la altura del nav-body */
+    padding: 0;
+}
+
+.nav-header {
+    color: var(--color-text-white);
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: left;
+    padding: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-border-gray); 
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--color-border-gray); 
+}
+
+.nav-link { 
+    display: block;
+    padding: 15px 20px; 
+    text-decoration: none;
+    color: var(--color-text-white); 
+    background-color: var(--color-nasa-blue); 
+    border-left: 5px solid transparent; 
+    transition: background-color 0.3s, border-left 0.3s;
+    font-weight: 400;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+    background-color: var(--color-content-bg); /* Fondo gris oscuro */
+    color: var(--color-text-white);
+    border-left: 5px solid var(--color-text-white); /* Borde de acento blanco */
+    box-shadow: none; 
+}
+
+/* Estilo para el elemento activo */
+.nav-link.active {
+    background-color: var(--color-content-bg); /* Fondo gris oscuro para el activo */
+    color: var(--color-text-white);
+    border-left: 5px solid var(--color-text-white); /* Borde de acento blanco */
+    font-weight: 500;
+    box-shadow: none;
+}
+
+/* Estilo para la clase 'highlight' */
+.nav-item.highlight .nav-link {
+    background-color: var(--color-content-bg); 
+    color: var(--color-text-white);
+    font-weight: 500;
+    border-left: 5px solid var(--color-text-white);
+    box-shadow: none;
+}
+/* =======================================================
+   ESTILOS ADICIONALES (more_info.html)
+   ======================================================= */
+
+/* Secciones de contenido */
+.content-section {
+    margin: 40px auto;
+    max-width: 900px;
+    background: var(--color-panel-background); /* Coherente con el nuevo panel de fondo */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border-subtle);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); 
+}
+
+/* Título principal de More Info */
+.main-title {
+    /* Mantenemos el estilo del título, pero aseguramos que los colores de acento sean blancos */
+    color: var(--color-white); 
+    border-bottom: 3px solid var(--color-white); 
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); 
+}
+
+/* Títulos secundarios */
+.section-title {
+    color: var(--color-white); /* Títulos secundarios también en blanco */
+}
+
+/* Viñetas y destacado en listas */
+ul li::before {
+    content: '•'; 
+    color: var(--color-white); /* Viñetas blancas */
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+strong {
+    color: var(--color-white); /* Destacado fuerte en blanco */
+    font-weight: bold;
+}
+
+.final-message {
+    text-align: center; 
+    margin-top: 40px; 
+    color: var(--color-white); 
+    font-weight: 600;
+}
+/* =======================================================
+   ESTRUCTURA DE DOS COLUMNAS (Para Search.html)
+   ======================================================= */
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    /* Fondo sólido y margen para el área de contenido */
+    background-color: var(--color-content-bg); /* Azul marino medio */
+    padding: 40px;
+    position: relative;
+    z-index: 2; 
+    
+    /* CRÍTICO: Mover el contenido fuera del sidebar fijo */
+    margin-left: 280px; 
+    flex-grow: 1; 
+    box-shadow: -10px 0 30px rgba(0,0,0,0.7); 
+    min-height: 100vh;
+}
+
+/* --- ESTILOS ESPECÍFICOS DE LA PÁGINA DE BÚSQUEDA --- */
+
+.header {
+    background: transparent; /* Se apoya en el fondo sólido del content-wrapper */
+    padding: 0;
+    text-align: left;
+    border-bottom: none;
+}
+.header h1 {
+    display: none; /* Oculta el h1 duplicado, usando el h1 del welcome-title para la coherencia */
+}
+
+.container {
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+}
+
+.section {
+    margin-bottom: 2rem;
+    background: var(--color-panel-light); /* Paneles en color de contraste */
+    padding: 1.5rem;
+    border: 1px solid var(--color-border-gray);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.section h2 {
+    color: var(--color-accent-cyan);
+    border-bottom: 1px solid var(--color-border-gray);
+    padding-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Listas (ul y li) se adhieren a los estilos definidos en el CSS general. */
+
+.content-section {
+    margin: 40px 0; /* Sin auto, ya que content-area maneja el margen */
+    max-width: 900px; 
+    background: var(--color-panel-light); /* Fondo de panel limpio */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border-gray);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.benefit-list li, ul li {
+    /* Estilo coherente para listas */
+    background-color: var(--color-nasa-blue); 
+    border-left: 4px solid var(--color-accent-red); /* Acento rojo NASA */
+    /* ... el resto de estilos ... */
+}
+
+/* =======================================================
+   ESTILOS ADICIONALES (Multimedia.html)
+   ======================================================= */
+
+/* --- Título principal (Alineado con el estilo de Home y Search) --- */
+.main-title {
+    /* Usamos el estilo que ya definimos para el título principal en el CSS global */
+    color: var(--color-white); 
+    font-size: 2.5em;
+    text-align: left; /* Alineado a la izquierda para páginas de contenido */
+    border-bottom: 2px solid var(--color-text-white); /* Línea de acento blanca */
+    padding-bottom: 10px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4); 
+    margin-bottom: 30px;
+}
+
+/* --- Contenedor de la Galería (Lista UL) --- */
+.content-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+    display: grid;
+    /* Mantiene el grid responsivo para la galería */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+}
+
+.media-item {
+    /* Ítem de Galería: Fondo oscuro con borde de acento */
+    background-color: var(--color-panel-light); 
+    border: 1px solid var(--color-border-gray);
+    /* Usamos un acento rojo/blanco para el borde, no el magenta */
+    border-left: 4px solid var(--color-accent-red); 
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Glow blanco sutil */
+    transition: transform 0.3s;
+}
+
+.media-item:hover {
+    transform: translateY(-5px);
+    /* Efecto de hover limpio y profesional */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); 
+    border-color: var(--color-accent-cyan); /* Acento cian al pasar el ratón */
+}
+
+.media-item strong {
+    color: var(--color-accent-red); /* Títulos de la media en acento primario */
+}
+
+
+/* =======================================================
+   ESTILOS ADICIONALES (Workshops.html)
+   ======================================================= */
+
+/* --- HEADER STYLING (Se adapta al .welcome-title en el HTML) --- */
+/* (No necesitamos reglas .header aquí ya que usamos .welcome-title) */
+
+/* --- CONTENIDO CONTAINER --- */
+.container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section {
+    margin-bottom: 2rem;
+    background: var(--color-panel-light); /* Fondo de panel limpio */
+    padding: 1.5rem;
+    border: 1px solid var(--color-border-gray);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.section h2 {
+    color: var(--color-text-white); /* Título secundario en blanco */
+    margin-top: 0;
+    border-bottom: 1px solid var(--color-border-gray);
+    padding-bottom: 8px;
+    font-size: 1.6em;
+    font-weight: 500;
+}
+
+.section p {
+    margin-bottom: 1em;
+    color: var(--color-text-white); /* Asegura que el texto del párrafo sea blanco */
+}
+
+/* --- LINK STYLING (El enlace "Click here") --- */
+.section a {
+    /* Enlaces en el color de acento principal (Blanco en monocromo) */
+    color: var(--color-text-white); 
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.section a:hover {
+    color: var(--color-accent-red); /* Si usaste el rojo de acento, úsalo aquí */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Sombra blanca al hacer hover */
+}
+
+
+
+/* --- ESTILOS PARA VISUALIZACIÓN DE DATOS --- */
+
+#visualizations {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los gráficos se ajusten en la pantalla */
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.chart-container {
+    background-color: var(--color-text-white); /* Fondo blanco para el gráfico (como Pyplot) */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    width: 100%; /* Ocupa todo el ancho por defecto */
+    max-width: 600px; /* Limita el ancho para que se puedan ver dos en una fila grande */
+    text-align: center;
+}
+
+.data-chart {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+figcaption {
+    color: var(--color-nasa-blue); /* Texto oscuro sobre el fondo blanco de la figura */
+    font-size: 0.9em;
+    padding-top: 10px;
+}

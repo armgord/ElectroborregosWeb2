@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Info | Context & Resources</title>
+    <style>
+        /* --- COLORES NASA / ESPACIALES --- */
+        :root {
+            --color-dark-navy: #040D1D; /* Fondo principal (NASA Blue/Dark Navy) */
+            --color-panel-dark: #101F33; /* Fondo de sección (Slightly lighter dark blue) */
+            --color-white: #FFFFFF; /* Texto principal */
+            --color-cyan: #00BCD4; /* Detalle de acento 1 (Cían neón) */
+            --color-red-fire: #FC3D21; /* Detalle de acento 2 (Naranja/Rojo fuego, como en los logos de misión) */
+            --color-gray-border: #3D4F66; /* Borde sutil */
+        }
+
+        /* --- BODY Y FONDO --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--color-dark-navy); 
+            color: var(--color-white); 
+        }
+        
+        /* --- ENCABEZADO PRINCIPAL --- */
+        .main-title {
+            color: var(--color-white); /* Título en blanco sólido */
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 5px;
+            /* Sombra de texto suave con acento cian */
+            text-shadow: 0 0 8px rgba(0, 188, 212, 0.4); 
+            /* Borde inferior con el color de acento */
+            border-bottom: 3px solid var(--color-red-fire); 
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- SECCIÓN DE CONTENIDO (PANELES) --- */
+        .content-section {
+            margin: 40px auto;
+            max-width: 900px;
+            background: var(--color-panel-dark); /* Fondo de panel azul oscuro */
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--color-gray-border);
+            /* Sombra que simula el brillo de una pantalla */
+            box-shadow: 0 0 15px rgba(252, 61, 33, 0.3); 
+        }
+        
+        /* --- SUBENCABEZADOS --- */
+        .section-title {
+            color: var(--color-cyan); /* Título secundario en cian */
+            border-bottom: 1px solid var(--color-gray-border);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            font-size: 1.6em;
+            font-weight: 600;
+        }
+
+        /* --- LISTAS (Recursos y Consideraciones) --- */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        ul li {
+            padding: 10px 0;
+            border-bottom: 1px dotted var(--color-gray-border);
+            /* Detalle de ícono con color de acento */
+            position: relative; 
+            padding-left: 20px;
+        }
+        ul li::before {
+            content: '•'; /* Pequeño punto como viñeta */
+            color: var(--color-red-fire); /* Color de la viñeta */
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        ul li:last-child {
+            border-bottom: none;
+        }
+        
+        /* --- ETIQUETAS STRONG (Destacado) --- */
+        strong {
+            color: var(--color-cyan); /* Destaca términos en color cian */
+            font-weight: bold;
+        }
+
+        /* --- PÁRRAFO FINAL --- */
+        .final-message {
+            text-align: center; 
+            margin-top: 40px; 
+            color: var(--color-red-fire); /* El mensaje final en color de acento */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="main-title">💡 More Info: Key Context and Resources</h1>
+
+    <div class="content-section">
+
+        <h2 class="section-title">Clearing the Exploration Fog</h2>
+        <p>
+            The mission to carry humanity beyond Earth's orbit doesn't end with science alone. It demands **strategy, ethics, and critical documentation**. This module is designed to provide the essential context and resources that complement the scientific research, transforming raw data into actionable knowledge for mission design.
+        </p>
+
+        <h2 class="section-title">Deepen Your Research</h2>
+        <p>
+            Here you'll find the **documentary infrastructure** that fuels the Knowledge Engine. While the Dashboard provides results, this section gives you the complete picture:
+        </p>
+        <ul>
+            <li>
+                <strong>NASA Data Sources:</strong> Get direct access to the original repositories containing the metadata and primary data for many of the analyzed studies, such such as the **NASA Open Science Data Repository (OSDR)**.
+            </li>
+            <li>
+                <strong>Funding and Mission Resources:</strong> Understand the administrative and financial context of the research. Explore the **NASA Task Book** to view the grants that made these discoveries possible.
+            </li>
+            <li>
+                <strong>Life Sciences Library:</strong> Consult the **NASA Space Life Sciences Library** to find related publications that expand the scope of your analysis.
+            </li>
+        </ul>
+
+        <h2 class="section-title">Critical Considerations for Exploration</h2>
+        <p>
+            Long-term vision requires addressing questions beyond the lab bench. Find resources covering:
+        </p>
+        <ul>
+            <li>
+                <strong>Exploration Medicine:</strong> Translational research for human habitation missions.
+            </li>
+            <li>
+                <strong>Ethical Aspects:</strong> Implications of non-governmental space exploration and considerations for life in extreme environments.
+            </li>
+            <li>
+                <strong>Target Audience Insights:</strong> Understand how these data directly impact scientists generating new hypotheses, managers identifying investment opportunities, and mission architects planning safe journeys to Mars.
+            </li>
+        </ul>
+
+        <p class="final-message">
+            Your expanded resource exploration begins here.
+        </p>
+    </div>
+
+</body>
+</html>
